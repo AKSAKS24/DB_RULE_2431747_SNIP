@@ -1,0 +1,10 @@
+{
+    "pgm_name": "ZTEST_RULE_2431747_COMBINED",
+    "inc_name": "ZTEST_RULE_2431747_COMB_INC",
+    "type": "PROG",
+    "name": "MAIN_BLOCK",
+    "class_implementation": "",
+    "start_line": 5,
+    "end_line": 200,
+    "code": "DATA lt_bsis TYPE TABLE OF bsis.\nDATA lt_bseg TYPE TABLE OF bseg.\nDATA lt_join TYPE TABLE OF bsad.\nDATA lt_acdoca TYPE TABLE OF acdoca.\nDATA lt_bkpf TYPE TABLE OF bkpf.\nDATA lv_tab TYPE tabname VALUE 'FAGLFLEXA'.\nSELECT * FROM bsis INTO TABLE lt_bsis.\nUPDATE bseg SET belnr = '1230000001' WHERE bukrs = '1000' AND gjahr = '2024'.\nSELECT a~belnr b~gjahr FROM bseg AS a INNER JOIN bsad AS b ON a~belnr = b~belnr INTO TABLE lt_join.\nSELECT * FROM acdoca INTO TABLE lt_acdoca.\nSELECT * FROM bkpf INTO TABLE lt_bkpf.\n"
+}
